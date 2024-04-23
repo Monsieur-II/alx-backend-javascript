@@ -1,15 +1,13 @@
-export function handleResponseFromAPI(promise) {
+function handleResponseFromAPI(promise) {
   promise
-    .then(() => {
-      return {
-        status: 200,
-        body: 'success',
-      };
-    })
-    .catch(() => {
-      return new Error('The fake API is not working currently');
-    })
+    .then(() => ({
+      status: 200,
+      body: 'success',
+    }))
+    .catch(() => new Error('The fake API is not working currently'))
     .finally(() => {
       console.log('Got a response from the API');
     });
 }
+
+export default handleResponseFromAPI;

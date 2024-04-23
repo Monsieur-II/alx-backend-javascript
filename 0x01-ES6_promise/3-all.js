@@ -1,7 +1,6 @@
-import uploadPhoto from './utils';
-import createUser from './utils';
+import { uploadPhoto, createUser } from './utils';
 
-export function handleProfileSignup() {
+function handleProfileSignup() {
   const photo = uploadPhoto();
   const user = createUser();
 
@@ -13,6 +12,8 @@ export function handleProfileSignup() {
       console.log('Signup system offline');
     });
 }
+
+export default handleProfileSignup;
 
 // export async function handleProfileSignup() {
 //   const photo = uploadPhoto();
